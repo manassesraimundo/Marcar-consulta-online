@@ -1,0 +1,74 @@
+.containerSectionWelcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 28px;
+    height: 75vh;
+    width: 100%;
+    background-color: #ecf0f1;
+    gap: 14px;
+    margin-top: 24px;  
+}
+
+.welcomeText {
+    color: rgb(24, 23, 23);
+    width: 650px;
+}
+
+.welcomeText h2 {
+    font-size: 36px;
+    padding: 12px;
+    margin-bottom: 14px;
+}
+
+.welcomeText p {
+    text-align: justify;
+    padding: 6px;
+    line-height: 1.4rem;
+}
+
+.botaoNavigate button {
+    margin-top: 12px;
+    background-color: #1579bc;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    padding: 8px;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: .6s;
+}
+
+.botaoNavigate button:hover {
+    background-color: #268dd2c4;
+}
+
+.imgContainer {
+    padding: 14px;
+}
+
+.imgContainer img{
+    height: 550px;
+    border-radius: 6px;
+    filter: opacity(75%);
+    border: 1px solid #ecf0f1
+}
+
+@media (max-width: 780px) {
+    .containerSectionWelcome {
+        flex-direction: column;
+        height: auto;
+        padding: 4px;
+    }
+
+    .welcomeText {
+        max-width: 410px;
+    }
+
+    .imgContainer img {
+        max-height: 470px;
+       
+    }
+}

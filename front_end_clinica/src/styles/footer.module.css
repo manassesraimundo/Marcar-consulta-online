@@ -1,0 +1,44 @@
+.containerFooter {
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logoFooter a {
+    font-size: 20px;
+    color: #fff;
+}
+
+.logoFooter a span {
+    color: red;
+}
+
+.contatos {
+    text-align: right;
+}
+
+.contatos p {
+    margin-bottom: 12px;
+    text-decoration: underline;
+    font-style: italic;
+    font-size: 16px;
+}
+
+@media (max-width: 786px) {
+
+    .containerFooter {
+        flex-direction: column;
+    }
+
+    .logoFooter {
+        margin-top: 24px;
+    }
+
+    .contatos {
+        margin-bottom: 18px;
+    }
+}

@@ -1,0 +1,137 @@
+.containerNavBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 14px 0;
+    height: 100px;
+    background-color: #fff;
+}
+
+.containerNavBar div {
+    display: flex;
+    padding: 8px;
+    height: 100px;
+}
+
+.divLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divLogo a {
+    padding: 11px;
+    border-radius: 6px;
+    background-color: #000;
+    color: #fff;
+    font-size: 17px;
+}
+
+.divLogo a span {
+    color: red;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 12px;
+}
+
+.containerNavBar li a {
+    font-size: 17px;
+    color: black;
+    padding: 12px;
+    border-radius: 6px;
+    transition: .8s;
+}
+
+.containerNavBar li a:hover {
+    background-color: #3498db9a;
+    opacity: 0.8;
+}
+
+.buttonMarcaConsulta {
+    margin-left: 14px;
+}
+
+.checkbox {
+    display: none;
+}
+
+@media (max-width: 786px) {
+    .containerNavBar div {
+        height: 90px;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 64px;
+        gap: 48px;
+        position: absolute;
+        top: 5.6975rem;
+        left: 0;
+        background: #fff;
+        text-align: center;
+        width: 100%;
+        height: 0;
+        z-index: 1;
+        transition: 0.5s;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    .menu a { 
+        padding: 1rem 0;
+        margin-inline: 1rem;
+        border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.16);
+        border-radius: 0;
+        color: #fff;
+    }
+
+    .label_menu {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #000;
+        padding-block: 1rem;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        border-top: 0.220rem solid;
+        width: 1.45rem;
+    }
+
+    .hamburger::before, 
+    .hamburger::after {
+        content: " ";
+        display: block;
+        width: 1.45rem;
+        height: 0.220rem;
+        background: currentColor;
+        margin-top: 0.3125rem;
+        transition: .8s;
+        position: relative;
+    }
+
+    .checkbox:checked ~ .menu {
+        height: calc(100vh - 4.6875rem);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .checkbox:checked ~ .label_menu .hamburger {
+       border-top-color: transparent;
+       color: red;
+    }
+    .checkbox:checked ~ .label_menu .hamburger::before {
+        transform: rotate(135deg);
+    }
+    .checkbox:checked ~ .label_menu .hamburger::after {
+        transform: rotate(-135deg);
+        top: -9px;
+    }
+}

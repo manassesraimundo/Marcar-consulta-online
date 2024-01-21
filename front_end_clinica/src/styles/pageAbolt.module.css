@@ -1,0 +1,31 @@
+.containerAbolt {
+    background: linear-gradient(to bottom, #3498db7c, #ffffff8d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    gap: 24px;
+}
+
+.containerAbolt p {
+    font-size: 26px;
+    color: #000;
+}
+
+.containerAbolt button {
+    background-color: #1579bc;
+    width: 250px;
+    height: 50px;
+    padding: 12px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    transition: .8s;
+    cursor: pointer;
+}
+
+.containerAbolt button:hover {
+    background-color: #3498db9a;
+}

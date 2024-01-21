@@ -1,0 +1,40 @@
+.containerNotFound {
+    background: linear-gradient(to bottom, #3498db7c, #ffffff8d);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    color: black;
+}
+
+.containerNotFound h2 {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+.containerNotFound p {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 34px;
+}
+
+.containerNotFound button {
+    background-color: #1579bc;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 12px;
+    cursor: pointer;
+    transition: .8s;
+}
+
+.containerNotFound button:hover {
+    background-color: #3498db;
+}

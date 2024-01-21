@@ -1,0 +1,90 @@
+.containerCancelar {
+    width: 100%;    
+    height: 80vh;
+    background-color: #ecf0f1;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 38px 0;
+}
+
+.infoCancelarConsulta {
+    width: 700px;
+    margin-bottom: 34px;
+    margin-top: 34px;
+}
+
+.infoCancelarConsulta h2 {
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.infoCancelarConsulta p {
+    margin-bottom: 22px;
+    font-size: 18px;
+}
+
+.containerCancelarConsulta {
+    background-color: #fff;
+    height: 680px;
+    width: 700px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 38px;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.containerInput div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.containerInput div input {
+    width: 350px;
+    height: 45px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.buttonCancela button {
+    width: 200px;
+    height: 50px;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid red;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .8s;
+}
+
+.buttonCancela button:hover {
+    background-color: rgba(255, 0, 0, 0.373);
+}
+
+@media (max-width: 786px) {
+    .infoCancelarConsulta {
+        max-width: 100%;
+        padding: 12px;
+    }   
+
+    .containerCancelarConsulta {
+        max-width: 400px;
+    }
+}

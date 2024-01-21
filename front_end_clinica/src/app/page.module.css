@@ -1,0 +1,38 @@
+.containerMain {
+  height: 80vh;
+  background-image: linear-gradient(to bottom, #3498db7c, #ffffff8d), url('../../public/img/imagem02.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 34px;
+  color: #fff;
+}
+
+.containerMain div {
+  text-align: center;
+  padding: 14px;
+}
+
+.containerMain div h1 {
+  font-size: 80px;
+}
+
+.containerMain div p {
+  font-size: 18px;
+  padding: 20px;
+
+}
+
+@media (max-width: 768px) {
+  .containerMain div {
+      padding: 4px;
+  }
+
+  .containerMain p {
+      padding: 1px;
+  }
+}

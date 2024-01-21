@@ -1,0 +1,111 @@
+.containerSectionServicos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    color: #000;
+    margin: 28px 0;
+    padding: 24px 0;
+}
+
+.imagemBackgraud {
+    height: 40vh;
+    background-image: linear-gradient(to bottom, #3498db7c, #ffffff8d), url('../../public/img/imagem02.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.imagemBackgraud h2 {
+    font-size: 46px;
+    padding: 12px;
+    color: #fff;
+    text-align: center;
+}
+
+.servicos {
+    margin-bottom: 28px;
+    max-width: 820px;
+}
+
+.servicos p {
+    padding: 8px;
+    line-height: 1.4rem;
+    text-align: justify;
+}
+
+.divPreco {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 38px;
+}
+
+.divPreco h3 {
+    padding: 12px;
+    font-size: 26px;
+}
+
+.precos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 700px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.precos div {
+    width: 200px;
+    height: 200px;
+    padding: 14px;
+    background-color: #3498dbde;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #fff;
+    transition: .5s;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.625);
+}
+
+.precos div:hover {
+    background-color: #3498db9f;
+}
+
+.precos div h5 {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.containerButon button {
+    margin-top: 12px;
+    background-color: #1579bc;
+    color: #fff;
+    width: 250px;
+    height: 65px;
+    padding: 12px;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: .6s;
+}
+
+.containerButon button:hover {
+    background-color: #268dd2c4;
+}
+
+@media (max-width: 768px) {
+    .containerSectionServicos {
+        padding: 2px;
+    }
+}
