@@ -29,7 +29,7 @@ interface PropsBasicModal {
     email: string,
     consulta: any,
     dataConsulta: any,
-    hora: string,
+    hora: any,
     lista: any[],
     nome_consulta: any
 }
@@ -96,7 +96,6 @@ export default function BasicModal(props: PropsBasicModal) {
                     <Typography id="modal-modal-description" sx={{ mb: 2 }}>
                         <strong>Data da consulta:</strong> {props.dataConsulta != '' && props.hora != '' ? `${props.dataConsulta} as ${props.hora}` : ''}
                     </Typography>
-
                     <div style={{ display: 'flex', gap: 10, justifyContent: 'end' }}>
                         <ButtonBase className={styles.bottonMarcar} onClick={handleSubmit}>Marcar</ButtonBase>
                         <ButtonBase className={styles.bottonCancelar} onClick={fechar}>Cancelar</ButtonBase>

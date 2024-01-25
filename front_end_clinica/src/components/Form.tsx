@@ -8,19 +8,23 @@ import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
 import BasicModal from './Modal';
 import styles from '../styles/form.module.css'
 
-interface FormProps 
-{
+interface FormProps {
     consultas: any[],
     consultas_marcadas: any[]
 }
 
+const fiveAM = dayjs().set('hour', 5).startOf('hour');
+const nineAM = dayjs().set('hour', 9).startOf('hour');
+
 export default function Form(props: FormProps) {
 
     const [dataConsulta, setDataCosulta] = useState<Dayjs | null>(null)
+    const [hour, setHour] = useState(fiveAM)
 
     const [nome, setNome] = useState<string>('')
     const [telefone, setTelefone] = useState<string>('')
@@ -29,11 +33,8 @@ export default function Form(props: FormProps) {
     const [lista, setLista] = useState<any>([])
     const [nome_consulta, setNome_consulta] = useState<any>()
 
-    const [hora, setHora] = useState<string>('')
-
     useEffect(() => {
-        async function get_consulta_id() 
-        {
+        async function get_consulta_id() {
             if (consulta !== '') {
                 const res = await axios.get(`http://localhost:8000/api_data/consulta_id/${consulta}`)
                 setLista(res.data)
@@ -45,6 +46,11 @@ export default function Form(props: FormProps) {
         get_consulta_id()
 
     }, [consulta])
+
+    const handHour = (hora: any) => {
+        const h = hora.format('HH:mm')
+        setHour(h)
+    }
 
     return (
         <form className={styles.form}>
@@ -96,7 +102,7 @@ export default function Form(props: FormProps) {
                 <div className={styles.divSelect}>
                     <div className={styles.calendario}>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DemoContainer components={['DateCalendar', 'DateCalendar']}>
+                            <DemoContainer components={['DateCalendar']}>
                                 <DemoItem label="">
                                     <DateCalendar value={dataConsulta} onChange={(newValue: any) => setDataCosulta(newValue)} />
                                 </DemoItem>
@@ -105,15 +111,18 @@ export default function Form(props: FormProps) {
                     </div>
 
                     <div className={styles.hora}>
-                        <label>Hora*</label>
-                        <p>Hora*</p>
-                        <input
-                            type="text"
-                            placeholder='10:00'
-                            value={hora}
-                            onChange={(e) => setHora(e.target.value)}
-                            required
-                        />
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <DemoContainer components={['TimePicker']}>
+                                <DemoItem label="">
+                                    <TimePicker
+                                        defaultValue={fiveAM}
+                                        minTime={nineAM}
+                                        value={hour}
+                                        onChange={handHour}
+                                    />
+                                </DemoItem>
+                            </DemoContainer>
+                        </LocalizationProvider>
                     </div>
                 </div>
             </div>
@@ -125,10 +134,10 @@ export default function Form(props: FormProps) {
                     email={email}
                     dataConsulta={dataConsulta?.format('dddd, YYYY-MM-DD')}
                     consulta={consulta}
-                    hora={hora}
+                    hora={hour}
                     lista={lista}
                     nome_consulta={nome_consulta}
-                /> 
+                />
             </div>
         </form>
     )
